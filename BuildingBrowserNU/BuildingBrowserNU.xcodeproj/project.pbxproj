@@ -14,6 +14,7 @@
 		BD2DEE5228D925B200CF8F2C /* BuildingBrowserNUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2DEE5128D925B200CF8F2C /* BuildingBrowserNUTests.swift */; };
 		BD2DEE5C28D925B200CF8F2C /* BuildingBrowserNUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2DEE5B28D925B200CF8F2C /* BuildingBrowserNUUITests.swift */; };
 		BD2DEE5E28D925B200CF8F2C /* BuildingBrowserNUUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2DEE5D28D925B200CF8F2C /* BuildingBrowserNUUITestsLaunchTests.swift */; };
+		BD2DEE6B28D925F400CF8F2C /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2DEE6A28D925F400CF8F2C /* Examples.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		BD2DEE5728D925B200CF8F2C /* BuildingBrowserNUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildingBrowserNUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2DEE5B28D925B200CF8F2C /* BuildingBrowserNUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingBrowserNUUITests.swift; sourceTree = "<group>"; };
 		BD2DEE5D28D925B200CF8F2C /* BuildingBrowserNUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingBrowserNUUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BD2DEE6A28D925F400CF8F2C /* Examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examples.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				BD2DEE3F28D925B000CF8F2C /* BuildingBrowserNUApp.swift */,
 				BD2DEE4128D925B000CF8F2C /* ContentView.swift */,
+				BD2DEE6A28D925F400CF8F2C /* Examples.swift */,
 				BD2DEE4328D925B200CF8F2C /* Assets.xcassets */,
 				BD2DEE4528D925B200CF8F2C /* BuildingBrowserNU.entitlements */,
 				BD2DEE4628D925B200CF8F2C /* Preview Content */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD2DEE4228D925B000CF8F2C /* ContentView.swift in Sources */,
+				BD2DEE6B28D925F400CF8F2C /* Examples.swift in Sources */,
 				BD2DEE4028D925B000CF8F2C /* BuildingBrowserNUApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
