@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
     
     @State var currentLoc: Location? = nil
@@ -38,17 +40,21 @@ struct ContentView: View {
                                         
                                         HStack {
                                             loc.category.symbol()
+                                                .foregroundColor(loc.category.color())
                                             Text(loc.name)
+                                                .font(.system(.body, design: .rounded, weight: .regular))
                                         }
-                                        .foregroundColor(loc.category.color())
                                     }
                                 }
+                                .buttonStyle(.plain)
+                                .padding(.bottom, 12)
                             }
                         }
                         .padding(.horizontal, 18)
                     }
                     .frame(height: 240)
-                    .padding(.vertical, 24)
+                    .padding(.top, -36)
+                    .padding(.bottom, 12)
                     
                     Divider()
                     
@@ -70,9 +76,10 @@ struct ContentView: View {
                                         Spacer()
                                         
                                         Image(systemName: "chevron.right")
-                                            .font(.caption)
+                                            .font(.system(.caption, design: .rounded, weight: .regular))
                                             .foregroundColor(.secondary)
                                     }
+                                    .font(.system(.body, design: .rounded, weight: .regular))
                                     .padding(.horizontal)
                                     
                                 }
@@ -84,7 +91,15 @@ struct ContentView: View {
                         .buttonStyle(.plain)
                     }
                 }
-                .navigationTitle("Husky Places")
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        HStack {
+                            Image(systemName: "pawprint.fill")
+                            Text("Husky Places")
+                                .font(.system(.title2, design: .rounded, weight: .semibold))
+                        }
+                    }
+                }
             }
             
         }
@@ -116,7 +131,7 @@ struct DetailView: View {
                 HStack {
                     Text(location.name)
                         .foregroundColor(location.category.color())
-                        .font(.system(.largeTitle, weight: .bold))
+                        .font(.system(.largeTitle, design: .rounded, weight: .bold))
                     
                     Spacer()
                     
@@ -136,7 +151,7 @@ struct DetailView: View {
                 
                 GroupBox {
                     Text(Examples.lorem)
-                        .font(.system(.body, weight: .regular))
+                        .font(.system(.body, design: .rounded, weight: .regular))
                         .lineLimit(12)
                         .padding()
                     

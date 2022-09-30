@@ -12,6 +12,7 @@ struct BuildingBrowserNUApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .font(.system(.body, design: .rounded, weight: .regular))
         }
     }
 }
