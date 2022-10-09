@@ -39,7 +39,7 @@ struct ContentView: View {
                     VStack {
                         HStack {
                             Image(systemName: "magnifyingglass")
-                                .foregroundColor(focus == .searchBar ? .accentColor : .secondary)
+                                .foregroundColor(focus == .searchBar ? .nuRed : .secondary)
                             TextField("Search", text: $searchable.searchText)
                                 .focused($focus, equals: .searchBar)
                                 .autocorrectionDisabled(true)
@@ -47,7 +47,7 @@ struct ContentView: View {
                         .padding()
                         .background {
                             RoundedRectangle(cornerRadius: 10.0)
-                                .stroke(focus == .searchBar ? Color.accentColor : Color.secondary, lineWidth: 1)
+                                .stroke(focus == .searchBar ? Color.nuRed : Color.secondary, lineWidth: 1)
                         }
                         .overlay {
                             if (!searchable.searchText.isEmpty){
@@ -82,7 +82,9 @@ struct ContentView: View {
                             focus = nil
                         } label: {
                             Label("Dismiss", systemImage: "keyboard.chevron.compact.down")
+                                .labelStyle(.titleAndIcon)
                         }
+                        .tint(Color.nuRed)
                     }
                 }
             }
