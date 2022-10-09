@@ -15,6 +15,8 @@
 		BD2DEE5C28D925B200CF8F2C /* BuildingBrowserNUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2DEE5B28D925B200CF8F2C /* BuildingBrowserNUUITests.swift */; };
 		BD2DEE5E28D925B200CF8F2C /* BuildingBrowserNUUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2DEE5D28D925B200CF8F2C /* BuildingBrowserNUUITestsLaunchTests.swift */; };
 		BD2DEE6B28D925F400CF8F2C /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2DEE6A28D925F400CF8F2C /* Examples.swift */; };
+		BD3AF03228F2801F00BFEB04 /* Searchbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3AF03128F2801F00BFEB04 /* Searchbar.swift */; };
+		BD3AF03428F280F800BFEB04 /* View+PinToTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3AF03328F280F800BFEB04 /* View+PinToTop.swift */; };
 		BDAE73FB28E66C1E00FC4080 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAE73FA28E66C1E00FC4080 /* DetailView.swift */; };
 		BDAE73FD28E66CBA00FC4080 /* BannerImage+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAE73FC28E66CBA00FC4080 /* BannerImage+Image.swift */; };
 		BDAE73FF28E66CE700FC4080 /* MonospacePill.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAE73FE28E66CE700FC4080 /* MonospacePill.swift */; };
@@ -56,6 +58,8 @@
 		BD2DEE5B28D925B200CF8F2C /* BuildingBrowserNUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingBrowserNUUITests.swift; sourceTree = "<group>"; };
 		BD2DEE5D28D925B200CF8F2C /* BuildingBrowserNUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingBrowserNUUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BD2DEE6A28D925F400CF8F2C /* Examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examples.swift; sourceTree = "<group>"; };
+		BD3AF03128F2801F00BFEB04 /* Searchbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchbar.swift; sourceTree = "<group>"; };
+		BD3AF03328F280F800BFEB04 /* View+PinToTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PinToTop.swift"; sourceTree = "<group>"; };
 		BDAE73FA28E66C1E00FC4080 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BDAE73FC28E66CBA00FC4080 /* BannerImage+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BannerImage+Image.swift"; sourceTree = "<group>"; };
 		BDAE73FE28E66CE700FC4080 /* MonospacePill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonospacePill.swift; sourceTree = "<group>"; };
@@ -95,7 +99,6 @@
 		BD2DEE3328D925B000CF8F2C = {
 			isa = PBXGroup;
 			children = (
-				BDAE740A28E674A200FC4080 /* WordmarkView.swift */,
 				BD2DEE3E28D925B000CF8F2C /* BuildingBrowserNU */,
 				BD2DEE5028D925B200CF8F2C /* BuildingBrowserNUTests */,
 				BD2DEE5A28D925B200CF8F2C /* BuildingBrowserNUUITests */,
@@ -116,6 +119,9 @@
 		BD2DEE3E28D925B000CF8F2C /* BuildingBrowserNU */ = {
 			isa = PBXGroup;
 			children = (
+				BD3AF03328F280F800BFEB04 /* View+PinToTop.swift */,
+				BD3AF03128F2801F00BFEB04 /* Searchbar.swift */,
+				BDAE740A28E674A200FC4080 /* WordmarkView.swift */,
 				BDAE740828E6742900FC4080 /* ListView.swift */,
 				BDAE740628E673EA00FC4080 /* CarouselView.swift */,
 				BDAE740028E66DB700FC4080 /* ColorfulButton.swift */,
@@ -291,12 +297,14 @@
 			files = (
 				BDAE740728E673EA00FC4080 /* CarouselView.swift in Sources */,
 				BDAE740328E6722200FC4080 /* NuFont+Font.swift in Sources */,
+				BD3AF03228F2801F00BFEB04 /* Searchbar.swift in Sources */,
 				BD2DEE4228D925B000CF8F2C /* ContentView.swift in Sources */,
 				BDAE740B28E674A200FC4080 /* WordmarkView.swift in Sources */,
 				BDAE73FD28E66CBA00FC4080 /* BannerImage+Image.swift in Sources */,
 				BDAE73FB28E66C1E00FC4080 /* DetailView.swift in Sources */,
 				BDAE740528E6727700FC4080 /* ReadMoreView.swift in Sources */,
 				BDAE740128E66DB700FC4080 /* ColorfulButton.swift in Sources */,
+				BD3AF03428F280F800BFEB04 /* View+PinToTop.swift in Sources */,
 				BD2DEE6B28D925F400CF8F2C /* Examples.swift in Sources */,
 				BDAE740928E6742900FC4080 /* ListView.swift in Sources */,
 				BDAE73FF28E66CE700FC4080 /* MonospacePill.swift in Sources */,
