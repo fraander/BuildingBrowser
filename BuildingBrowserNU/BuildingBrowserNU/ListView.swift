@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct ListView: View {
+    @Environment(\.colorScheme) var colorMode
+    @EnvironmentObject var searchable: Searching
     @Binding var currentLoc: Location?
+    
+    var locations: [Location] {
+        return searchable.searchText.isEmpty ? Examples.locations : Examples.locations.filter {
+            $0.name.lowercased().contains(searchable.searchText.lowercased())
+        }
+    }
     
     var body: some View {
         ScrollView {
-            ForEach(Examples.locations) { loc in
+            ForEach(locations) { loc in
                 NavigationLink {
                     DetailView(currentLoc: $currentLoc, location: loc)
                 } label: {
                     VStack {
                         ZStack {
-                            
-                            Color(uiColor: UIColor.tertiarySystemBackground)
+                            Color(uiColor: colorMode == .dark ? UIColor.systemBackground :  UIColor.tertiarySystemBackground)
                             
                             HStack {
                                 loc.category.symbol()
@@ -51,6 +58,7 @@ struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ListView(currentLoc: .constant(Examples.iv))
+                .environmentObject(Searching())
         }
     }
 }

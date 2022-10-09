@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+class Searching: ObservableObject {
+    @Published var searchText = ""
+    
+    enum Focus {
+        case searchBar, other
+    }
+}
 
 
 struct ContentView: View {
@@ -21,24 +28,58 @@ struct ContentView: View {
         }
     }
     
+    @StateObject var searchable = Searching()
+    
+    @FocusState var focus: Searching.Focus?
+    
     var body: some View {
-        NavigationStack {
-            ScrollView(.vertical) {
-                VStack {
-                    CarouselView(currentLoc: $currentLoc)
-                    
-                    Divider()
-                    
-                    
-                    ListView(currentLoc: $currentLoc)
+        VStack {
+            NavigationStack {
+                ScrollView(.vertical) {
+                    VStack {
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(focus == .searchBar ? .accentColor : .secondary)
+                            TextField("Search", text: $searchable.searchText)
+                                .focused($focus, equals: .searchBar)
+                        }
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .stroke(focus == .searchBar ? Color.accentColor : Color.secondary, lineWidth: 1) // TODO: accentColor when searching
+                        }
+                        .padding(.horizontal, 12)
+                        .padding(.bottom, 18)
+                        
+                        CarouselView(currentLoc: $currentLoc)
+                        //                        .padding(.top, -36)
+                        //                        .padding(.bottom, 12)
+                        
+                        Divider()
+                        
+                        
+                        ListView(currentLoc: $currentLoc)
+                    }
+                    .environmentObject(searchable)
                 }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar(.visible)
                 .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        WordmarkView()
+                    ToolbarItem(placement: .keyboard) {
+                        Button {
+                            focus = nil
+                        } label: {
+                            Label("Dismiss", systemImage: "keyboard.chevron.compact.down")
+                        }
                     }
                 }
             }
-            
+            .overlay {
+                VStack {
+                    WordmarkView()
+                    Spacer()
+                }
+            }
         }
         .accentColor(tintColor)
     }

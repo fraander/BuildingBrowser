@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct CarouselView: View {
+    @EnvironmentObject var searchable: Searching
     @Binding var currentLoc: Location?
+    
+    var locations: [Location] {
+        return searchable.searchText.isEmpty ? Examples.locations : Examples.locations.filter {
+            $0.name.lowercased().contains(searchable.searchText.lowercased())
+        }
+    }
     
     var body: some View {
         ScrollView(.horizontal) {
             HStack(spacing: 18) {
-                ForEach(Examples.locations) { loc in
+                ForEach(locations) { loc in
                     NavigationLink {
                         DetailView(currentLoc: $currentLoc, location: loc)
                     } label: {
@@ -39,8 +46,6 @@ struct CarouselView: View {
             .padding(.horizontal, 18)
         }
         .frame(height: 240)
-        .padding(.top, -36)
-        .padding(.bottom, 12)
     }
 }
 
