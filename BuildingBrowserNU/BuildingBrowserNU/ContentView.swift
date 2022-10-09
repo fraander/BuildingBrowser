@@ -42,18 +42,30 @@ struct ContentView: View {
                                 .foregroundColor(focus == .searchBar ? .accentColor : .secondary)
                             TextField("Search", text: $searchable.searchText)
                                 .focused($focus, equals: .searchBar)
+                                .autocorrectionDisabled(true)
                         }
                         .padding()
                         .background {
                             RoundedRectangle(cornerRadius: 10.0)
-                                .stroke(focus == .searchBar ? Color.accentColor : Color.secondary, lineWidth: 1) // TODO: accentColor when searching
+                                .stroke(focus == .searchBar ? Color.accentColor : Color.secondary, lineWidth: 1)
+                        }
+                        .overlay {
+                            if (!searchable.searchText.isEmpty){
+                                Button {
+                                    searchable.searchText.removeAll()
+                                } label: {
+                                    Image(systemName: "xmark.circle.fill")
+                                }
+                                .buttonStyle(.plain)
+                                .foregroundColor(.secondary)
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                                .padding(.trailing, 16)
+                            }
                         }
                         .padding(.horizontal, 12)
                         .padding(.bottom, 18)
                         
                         CarouselView(currentLoc: $currentLoc)
-                        //                        .padding(.top, -36)
-                        //                        .padding(.bottom, 12)
                         
                         Divider()
                         
